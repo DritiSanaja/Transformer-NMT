@@ -122,6 +122,34 @@ def show():
 
     bleu_score = sentence_bleu([true_sent_words], predict_sent_words)
     print('BLEU score: {}'.format(bleu_score))
-
-
 ```
+## Results
+
+After training for one epoch, the model starts generating translations with relatively low BLEU scores (e.g., 0.12). This is expected since the model is still in its early training stages.
+For improved results, you should train the model for more epochs (e.g., 10–50 epochs). Increasing the model complexity (more layers, larger embedding sizes) or fine-tuning the hyperparameters may also help.
+
+## Challenges and Future Improvements
+
+### 1. **Insufficient Training**:
+The model was trained for just one epoch, and the BLEU scores are low. Increasing the training epochs should improve performance. It's common for transformer models to require extensive training to converge.
+
+### 2. **Model Hyperparameters**:
+* Experiment with different **embedding sizes**, **number of layers**, and **number of attention heads**.
+* Fine-tune the learning rate to see how it affects the training process.
+
+### 3. **Evaluation Metrics**:
+BLEU is a commonly used metric for evaluating machine translation quality, but other metrics such as **METEOR** and **TER** may provide a better understanding of translation quality.
+
+### 4. **Preprocessing and Data Augmentation**:
+* Proper tokenization and handling of punctuation are crucial for achieving good translation quality.
+* Consider augmenting the dataset or fine-tuning on domain-specific data for more accurate translations in specific contexts.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Conclusion
+
+This repository provides a foundational **Transformer-based Neural Machine Translation** model for translating German to English. While the model is still in its early stages, it offers a great starting point for exploring **Transformer architectures** in machine translation tasks. With more training and experimentation with hyperparameters, the model's performance can be significantly improved.
+
+Feel free to fork, clone, and improve the code for your own translation tasks!
